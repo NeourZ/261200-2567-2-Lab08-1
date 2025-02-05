@@ -34,20 +34,15 @@ public class Main {
 
         // Observations:
         /*
-         * Before adding Thread.sleep():
-         * - The output is unpredictable.
-         * - The numbers appear in a mixed order from all three threads.
-         * - Since threads execute independently, we may see multiple threads printing before another completes.
+         * ก่อนเพิ่ม Thread.sleep():
+         * - เลขที่ออกมาจะสุ่มจากทั้ง 3 threads และไม่เรียงลำดับ
          * 
          * After adding Thread.sleep():
-         * - The output is even more random because delays cause thread execution to shift unpredictably.
-         * - Threads do not print in a strict sequence.
-         * - Each execution gives a different output due to the randomized delays.
+         * - เลขที่ออกมาจะสุ่มจากทั้ง 3 threads และไม่เรียงลำดับ แต่จะมีความหลากหลายมากขึ้นจากการใช้ Thread.sleep()
          * 
          * Explanation:
-         * - In Java, threads run independently and the OS manages execution order.
-         * - The CPU switches between threads using a technique called **context switching**.
-         * - `Thread.sleep()` pauses a thread, allowing other threads to execute, increasing unpredictability.
+         * - การสลับการทำงานของเธรดขึ้นกับการจัดสรรของ CPU ทำให้ลำดับเปลี่ยนไปทุกครั้ง
+         * - Thread.sleep() ทำให้บางเธรดหยุดชั่วคราว ส่งผลให้เธรดอื่นทำงานก่อน
          */
     }
 }
